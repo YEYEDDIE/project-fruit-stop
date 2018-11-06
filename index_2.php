@@ -46,7 +46,7 @@ $stmt_3 = $conn->query($q_3_select);
   <div class="container">
   <div class="row">
     <div class="col-sm">
-      <a class="btn btn-outline-primary" href="index_1.php">Hemsida</a>
+      <a class="btn btn-outline-primary" href="index_2.php">Hemsida</a>
     </div>
     <div class="col-sm">
     <a class="btn btn-primary" href="AB.html">About</a>
