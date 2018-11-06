@@ -6,6 +6,26 @@ if(!isset($_SESSION['user'])){
 }else{
 	$output="välkommen";
 }
+require_once('db_connect.php');
+
+//frukt q-select
+$q_select = "SELECT * FROM produkt
+WHERE category=1";
+
+$stmt = $conn->query($q_select);
+
+//grönsakers q-select
+$q_2_select = "SELECT *  FROM produkt 
+WHERE category=2";
+
+$stmt_2 = $conn->query($q_2_select);
+
+//bär q-select
+$q_3_select = "SELECT * FROM produkt
+WHERE category=3";
+
+$stmt_3 = $conn->query($q_3_select);
+
  ?>
 <!doctype html>
 <html lang="en">
@@ -20,7 +40,79 @@ if(!isset($_SESSION['user'])){
     <title>Admin-fruit-stop</title>
   </head>
   <body>
-    <p><a class="btn" href="log_in.php?=logout">Logga ut</a></p>
+  <div class="container">
+  <h1>Fruit-Stop admin</h1>
+  <p>En mellan leverantör för dinna frukter och bär</p>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <a class="btn btn-outline-primary" href="index_1.php">Hemsida</a>
+    </div>
+    <div class="col-sm">
+    <a class="btn btn-primary" href="AB.html">About</a>
+    </div>
+    <div class="col-sm">
+     <a class="btn btn-primary" href="log_in.php?=logout">Logga ut</a>
+    </div>
+  </div>
+</div>
+  <!--table -->
+	  <br>
+	  <br>
+	  <br>
+	  <div class="container">
+  <div class="row"> 
+    <div class="col-sm">
+     <table  class="table table-bordered">
+		 <tr>
+		 <th colspan='2'>Frukter</th>
+		  </tr>
+		  <tr>
+		  <th>Produkt</th><th>Pris €/st</th>
+		  </tr>
+		  <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+		  <tr>
+			<td><?php echo $row['item'];  ?></td>
+			<td><?php echo $row['pris'];  ?></td>
+		 </tr>
+		 <?php  } ?>
+	 </table>
+    </div>
+    <div class="col-sm">
+   <table  class="table table-bordered"> <tr>
+	   <th colspan='2'>Grönsaker</th>
+	 </tr>
+	  <tr>
+		  <th>Produkt</th><th>Pris €/st</th>
+		  </tr>
+	 <?php while($row = $stmt_2->fetch(PDO::FETCH_ASSOC)) { ?>
+	 <tr>
+		 <td><?php echo $row['item'];  ?></td>
+		 <td><?php echo $row['pris'];  ?></td>
+		 </tr><?php  } ?>
+		</table>
+    </div>
+    <div class="col-sm">
+		<table class="table table-bordered"><tr>
+			<th colspan='2' >Bär</th>
+			 </tr>
+			  <tr>
+		  <th>Produkt</th><th>Pris €/100g</th>
+		  </tr>
+			 <?php while($row = $stmt_3->fetch(PDO::FETCH_ASSOC)) { ?>
+		<tr>
+			<td><?php echo $row['item'];  ?></td>
+			<td><?php echo $row['pris'];  ?></td>
+		</tr>
+		 <?php  } ?> 
+		</table> 
+    </div>
+  </div>
+	 
+</div>
+ 
+ 
+    
 <?php if(!empty($output)){echo '<h3 class="alert alert-warning">'. $output. '</h3>';}?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

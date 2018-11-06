@@ -1,4 +1,25 @@
+<?php
+require_once('db_connect.php');
 
+//frukt q-select
+$q_select = "SELECT * FROM produkt
+WHERE category=1";
+
+$stmt = $conn->query($q_select);
+
+//grönsakers q-select
+$q_2_select = "SELECT *  FROM produkt 
+WHERE category=2";
+
+$stmt_2 = $conn->query($q_2_select);
+
+//bär q-select
+$q_3_select = "SELECT * FROM produkt
+WHERE category=3";
+
+$stmt_3 = $conn->query($q_3_select);
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,7 +39,7 @@
   <div class="container">
   <div class="row">
     <div class="col-sm">
-      <a class="btn btn-outline-primary" href="index_1.html">Hemsida</a>
+      <a class="btn btn-outline-primary" href="index_1.php">Hemsida</a>
     </div>
     <div class="col-sm">
     <a class="btn btn-primary" href="AB.html">About</a>
@@ -35,24 +56,54 @@
 	  <div class="container">
   <div class="row">
     <div class="col-sm">
-     <table>
-		 <th>Frukter</th>
+     <table  class="table table-bordered">
+		 <tr>
+		 <th colspan='2'>Frukter</th>
+		  </tr>
+		  <tr>
+		  <th>Produkt</th><th>Pris €/st</th>
+		  </tr>
+		  <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+		  <tr>
+			<td><?php echo $row['item'];  ?></td>
+			<td><?php echo $row['pris'];  ?></td>
+		 </tr>
+		 <?php  } ?>
+	 </table>
+    </div>
+    <div class="col-sm">
+   <table  class="table table-bordered"> <tr>
+	   <th colspan='2'>Grönsaker</th>
+	 </tr>
+	  <tr>
+		  <th>Produkt</th><th>Pris €/st</th>
+		  </tr>
+	 <?php while($row = $stmt_2->fetch(PDO::FETCH_ASSOC)) { ?>
+	 <tr>
+		 <td><?php echo $row['item'];  ?></td>
+		 <td><?php echo $row['pris'];  ?></td>
+		 </tr><?php  } ?>
 		</table>
     </div>
     <div class="col-sm">
-   <table>
-	   <th>Grönsaker</th>
-		</table>
-    </div>
-    <div class="col-sm">
-		<table>
-			<th>Bär</th>
-		</table>
+		<table class="table table-bordered"><tr>
+			<th colspan='2' >Bär</th>
+			 </tr>
+			  <tr>
+		  <th>Produkt</th><th>Pris €/100g</th>
+		  </tr>
+			 <?php while($row = $stmt_3->fetch(PDO::FETCH_ASSOC)) { ?>
+		<tr>
+			<td><?php echo $row['item'];  ?></td>
+			<td><?php echo $row['pris'];  ?></td>
+		</tr>
+		 <?php  } ?> 
+		</table> 
     </div>
   </div>
 	 
 </div>
-   
+ 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
