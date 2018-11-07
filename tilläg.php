@@ -18,7 +18,7 @@ if(isset($_POST) && !empty($_POST)) {
     $output = "Ups, nånting gick fel..";
   }
 }
-$sql_2 = "DELETE FROM produkt WHERE id=3";
+
 
  ?>
 <!doctype html>
@@ -52,7 +52,9 @@ $sql_2 = "DELETE FROM produkt WHERE id=3";
 </div>
 <div id="cointainer">
 <br>
-<br>
+<br><div class="row">
+<div class="col-sm">
+
   <h3>Tilläg produkt</h3>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
@@ -64,7 +66,28 @@ $sql_2 = "DELETE FROM produkt WHERE id=3";
   <input type="text" name="pris"></input></p>
 <p><button type="submit">tilläg</button></p>
 
+</div>
 </form>
+
+<div class="col-sm">
+
+<ul>
+<li>för category info</li>
+<li>1 är frukter</li>
+<li>2 är grönsaker</li>
+<li>3 är bär</li>
+</ul>
+<p>priset skal skrivar med punkt!!</p>
+</div>
+<div class="col-sm">
+
+
+</div>
+</div>
+
+
+
+
 </div>
   <!-- -->
    <?php if(!empty($output)){echo '<h3 class="alert alert-warning">'. $output. '</h3>';} ?>
