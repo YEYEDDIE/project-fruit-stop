@@ -83,7 +83,7 @@ if (isset($_POST)&&!empty($_POST)){
 </div> <!-- / container -->
  <!-- Optional JavaScript -->
  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <p><a class="btn btn-primary" href="index_1.html?=logout">Tillbaka till hemsidan</a></p>
+  <p><a class="btn btn-primary" href="index_1.php?=logout">Tillbaka till hemsidan</a></p>
   
   
   
