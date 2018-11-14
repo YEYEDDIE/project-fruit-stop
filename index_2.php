@@ -76,7 +76,7 @@ $stmt_3 = $conn->query($q_3_select);
     <title>Admin-fruit-stop</title>
 	
   </head>
-  <body style="background-color:#ccff66;">
+  <body>
   <div id="top">
 
   <h1>Fruit-Stop</h1>
@@ -100,6 +100,7 @@ $stmt_3 = $conn->query($q_3_select);
 	  <br>
 	  <img src="assets/ad_1.png" alt="ad_1" height="150" width="690" >
 	  <br>
+	   <?php if(!empty($output)){echo '<h3 class="alert alert-warning">'. $output. '</h3>';} ?>
 	  <br>
 	  <div class="container" style="background-color:#ffffcc;
 	   border: 2px solid red;
@@ -123,7 +124,7 @@ $stmt_3 = $conn->query($q_3_select);
 			<td><input type="text" name="item" value="<?php echo $row['item'];  ?>"></td>
 			<td><input type="number" name="category" value="<?php echo $row['category'];  ?>"></td>
 			<td><input type="text" name="pris" value="<?php echo $row['pris'];  ?>"></td>
-<td><button type="submit" name="update">editera</button></td>
+	<td><button type="submit" name="update">spara</button></td>
 		<td><button type="submit" name="delete">radera</button></td>		 
 			</tr>
 		 </form>
@@ -145,7 +146,7 @@ $stmt_3 = $conn->query($q_3_select);
 		 <td><input type="number" name="category" value="<?php echo $row['category'];  ?>"></td>
 		 <td><input type="text" name="pris" value="<?php echo $row['pris'];  ?>"></td>
 		 
-		 <td><button type="submit" name="update">editera</button></td>
+		 <td><button type="submit" name="update">spara</button></td>
 		 <td><button type="submit" name="delete">radera</button></td>
 		 </tr>
 		  </form>
@@ -167,7 +168,7 @@ $stmt_3 = $conn->query($q_3_select);
 			 <td><input type="text" name="item" value="<?php echo $row['item'];  ?>"></td>
 		 <td><input type="number" name="category" value="<?php echo $row['category'];  ?>"></td>
 		  <td><input type="text" name="pris" value="<?php echo $row['pris'];  ?>"></td>
-			<td><button type="submit" name="update">editera</button></td>
+			<td><button type="submit" name="update">spara</button></td>
 			<td><button type="submit" name="delete">radera</button></td>
 		</tr>
 		 </form>
@@ -180,7 +181,7 @@ $stmt_3 = $conn->query($q_3_select);
 <br>
  <img src="assets/ad_1.png" alt="ad_1" height="150" width="690" >
  <br>
-    <?php if(!empty($output)){echo '<h3 class="alert alert-warning">'. $output. '</h3>';} ?>
+   
 	
 <div id="footer">
 <div class="row">

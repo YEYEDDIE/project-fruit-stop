@@ -35,7 +35,7 @@ if(isset($_POST) && !empty($_POST)) {
     <title>Fruit-stop shop</title>
   </head>
   <body>
-  <body style="background-color:#ccff66;">
+  <body>
   <div id="top">
 
   <h1>Fruit-Stop</h1>
@@ -52,7 +52,7 @@ if(isset($_POST) && !empty($_POST)) {
 </ul>
 </div><!-- end of nav -->
 </div><!-- end of wrap-->
-
+<?php if(!empty($output)){echo '<h3 class="alert alert-warning">'. $output. '</h3>';} ?>
 <div id="cointainer">
 <br><div class="row">
 <div class="tilläg">
@@ -60,25 +60,24 @@ if(isset($_POST) && !empty($_POST)) {
   <h3>Tilläg produkt</h3>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
+
 <p><label>Produkt namn</label><br>
   <input type="text" name="item"></p>
-<p><label>category 1-3 ATM</label><br>
-  <input type="number" name="category"></input></p>
-<p><label>pris</label><br>
+<p><label>Category </label><br>
+  <select name='category'>
+  <option value="1">Frukter</option>
+  <option value="2">Grönsaker</option>
+  <option value="3">Bär</option>
+  
+</select>
+  </p>
+<p><label>Pris</label><br>
   <input type="text" name="pris"></input></p>
 <p><button type="submit">tilläg</button></p>
 
 
 </form>
 
-
-<p>för category info</p>
-<ul>
-
-<li>1 är frukter</li>
-<li>2 är grönsaker</li>
-<li>3 är bär</li>
-</ul>
 <p>priset skal skrivar med punkt!!</p>
 </div>
 </div>
@@ -102,7 +101,7 @@ if(isset($_POST) && !empty($_POST)) {
   </div>
  </div>
   <!-- -->
-   <?php if(!empty($output)){echo '<h3 class="alert alert-warning">'. $output. '</h3>';} ?>
+   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -52,18 +52,17 @@ if (isset($_POST)&&!empty($_POST)){
  
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
- 
+	<link href="layout-hemsida_2.css" rel="stylesheet" type="text/css">
+	
+	
     <title> login</title>
-    <style>
-    img { max-width: 100%; }
-    h1 { text-align: center; }
-    </style>
+   
   </head>
   <body>
-    <div class="container">
+    <div class="tilläg">
       <div class="row">
         <div class="col">
-          <div class="jumbotron">
+          <div class="">
             <h1>Logga in på vår fina service</h1>
 				<?php if(!empty($output)){echo '<h3 class="alert alert-warning">'. $output. '</h3>';}?>
           <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -80,10 +79,12 @@ if (isset($_POST)&&!empty($_POST)){
         </div>
           </div>
 </div>
+<br>
+<p><a class="btn btn-primary" href="index_1.php?=logout">Tillbaka till hemsidan</a></p>
 </div> <!-- / container -->
  <!-- Optional JavaScript -->
  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <p><a class="btn btn-primary" href="index_1.php?=logout">Tillbaka till hemsidan</a></p>
+  
   
   
   

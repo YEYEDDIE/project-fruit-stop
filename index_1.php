@@ -33,7 +33,7 @@ $stmt_3 = $conn->query($q_3_select);
     <title>Fruit-stop shop</title>
 	
   </head>
-  <body style="background-color:#ccff66;">
+  <body>
  <div id="top">
 
   <h1>Fruit-Stop</h1>
