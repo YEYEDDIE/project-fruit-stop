@@ -28,32 +28,34 @@ if(isset($_POST) && !empty($_POST)) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!--  CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link href="layout-hemsida_2.css" rel="stylesheet" type="text/css">
 
     <title>Fruit-stop shop</title>
   </head>
   <body>
-  <div class="container">
+  <body style="background-color:#ccff66;">
+  <div id="top">
+
   <h1>Fruit-Stop</h1>
   <p>En mellan leverantör för dinna frukter och bär</p>
-  <div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <a class="btn btn-primary" href="index_2.php">Hemsida-admin</a>
-    </div>
-    <div class="col-sm">
-    <a class="btn btn-outline-primary" href="tilläg.php">tilläg</a>
-    </div>
-    <div class="col-sm">
-     <a class="btn btn-primary" href="log_in.php?=logout">Logga ut</a>
-    </div>
-  </div>
 </div>
+<div id="wrap">
+<div id="nav">
+
+<ul>
+<li><a href="index_2.php">Home</a></li>
+<li><a href="tilläg.php">tilläg</a></li>
+<li><a href="log_in.php?=logout">Logga&nbsp;ut</a></li>
+
+</ul>
+</div><!-- end of nav -->
+</div><!-- end of wrap-->
+
 <div id="cointainer">
-<br>
 <br><div class="row">
-<div class="col-sm">
+<div class="tilläg">
 
   <h3>Tilläg produkt</h3>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -66,29 +68,39 @@ if(isset($_POST) && !empty($_POST)) {
   <input type="text" name="pris"></input></p>
 <p><button type="submit">tilläg</button></p>
 
-</div>
+
 </form>
 
-<div class="col-sm">
 
+<p>för category info</p>
 <ul>
-<li>för category info</li>
+
 <li>1 är frukter</li>
 <li>2 är grönsaker</li>
 <li>3 är bär</li>
 </ul>
 <p>priset skal skrivar med punkt!!</p>
 </div>
+</div>
+
+
+
+
+</div>
+ <div id="footer">
+<div class="row">
+
 <div class="col-sm">
-
-
-</div>
-</div>
-
-
-
-
-</div>
+      Copyright Fruit-Stop © 2018
+    </div>
+    <div class="col-sm">
+   Support-Telnum: +358 50402312
+    </div>
+    <div class="col-sm">
+     support-Email: fruit.stop@hotmail.com
+    </div>
+  </div>
+ </div>
   <!-- -->
    <?php if(!empty($output)){echo '<h3 class="alert alert-warning">'. $output. '</h3>';} ?>
 
